@@ -1,3 +1,4 @@
 node_modules
 .env
 export-images/*.*
+package-lock.json
