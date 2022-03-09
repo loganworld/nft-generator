@@ -2,4 +2,5 @@ node_modules
 .env
 export-images/*.png
 *.zip
+package-lock.json
 *.rar
