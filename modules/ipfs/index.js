@@ -12,7 +12,7 @@ const upload_IPFS = async ({ imageDatas, resPath }) => {
         ipfsHashes.push(ipfsHash);
         await delay(10000);
     }
-    fs.writeFileSync(resPath, JSON.stringify(ipfsHashes, null, 4), function (err, content) {
+    fs.writeFileSync(resPath, JSON.stringify({ ipfsHashes: ipfsHashes }, null, 4), function (err, content) {
         if (err) throw err;
         console.log('complete');
     });
