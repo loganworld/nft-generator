@@ -2,7 +2,8 @@ const mergeImages = require('merge-images');
 const { Canvas, Image } = require('canvas');
 const fs = require("fs");
 
-const combineImages = async ({imageDatas, resPath}) => {
+const combineImages = async ({ imageDatas, resPath }) => {
+
     var bs64 = await mergeImages(imageDatas, {
         Canvas: Canvas,
         Image: Image
@@ -13,4 +14,4 @@ const combineImages = async ({imageDatas, resPath}) => {
     })
 }
 
-module.exports = {combineImages};
+module.exports = { combineImages };
