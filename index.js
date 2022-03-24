@@ -10,7 +10,7 @@ const initDatas = {
     index: 0
 }
 
-const generate_images = () => {
+const generate_images = async () => {
     var totalCount = 0;
     const generate = async ({ dirs, combineDatas, resImgPath, index }) => {
         if (dirs[index] == null) {
@@ -24,7 +24,7 @@ const generate_images = () => {
             await generate({ dirs, combineDatas: combineDatas.concat([`${dirs[index]}/c (${i}).png`]), index: index + 1, resImgPath })
         }
     }
-    generate(initDatas);
+    await generate(initDatas);
 }
 
 const uploadImages = async () => {
@@ -40,4 +40,8 @@ const uploadImages = async () => {
     await upload(initDatas);
 }
 
-generate_images();
+generate_images().then((res) => {
+    console.log("complete")
+}).catch((err) => {
+    console.log(err.message);
+});
