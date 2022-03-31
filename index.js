@@ -3,10 +3,10 @@ const { upload_IPFS } = require("./modules/ipfs")
 const fs = require('fs');
 
 const initDatas = {
-    dirs: ["emoji/body", "emoji/eye1", "emoji/eye2", "emoji/mouth"],
+    dirs: ["datas/foot", "datas/body", "datas/head", "datas/back", "datas/wing", "datas/horn", "datas/eye"],
     resImgPath: "export-images",
     resDataPath: "exports/hashes.json",
-    combineDatas: ["emoji/back/background.png"],
+    combineDatas: [],
     index: 0
 }
 
@@ -14,6 +14,8 @@ const generate_images = async () => {
     var totalCount = 0;
     const generate = async ({ dirs, combineDatas, resImgPath, index }) => {
         if (dirs[index] == null) {
+
+            console.log("generate");
             await combineImages({ imageDatas: combineDatas, resPath: `${resImgPath}/res_${totalCount}.png` });
             totalCount++;
             return;
