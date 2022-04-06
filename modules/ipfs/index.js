@@ -6,17 +6,14 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const upload_IPFS = async ({ imageDatas, resPath }) => {
     const basic_ipfs_url = "https://ipfs.io/ipfs/";
     var ipfsHashes = [];
-    console.log("upload_IPFS")
     for (var i = 0; i < imageDatas.length; i++) {
-        console.log("upload_IPFS",imageDatas[i])
         const contents = fs.readFileSync(imageDatas[i]);
         var result = await ipfs.files.add(contents);
         var ipfsHash = basic_ipfs_url + result[0].hash;
         ipfsHashes.push(ipfsHash);
         // await delay(10000);
-
-        console.log(ipfsHashes);
     }
+    
     fs.writeFileSync(resPath, JSON.stringify({ ipfsHashes: ipfsHashes }, null, 4), function (err, content) {
         if (err) throw err;
         console.log('complete');
