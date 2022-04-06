@@ -43,8 +43,10 @@ const uploadImages = async () => {
     await upload(initDatas);
 }
 
-generate_images().then((res) => {
-    console.log("complete")
-}).catch((err) => {
-    console.log(err.message);
-});
+// generate_images().then((res) => {
+//     console.log("complete")
+// }).catch((err) => {
+//     console.log(err.message);
+// });
+
+uploadImages();
