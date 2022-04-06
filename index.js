@@ -16,7 +16,7 @@ const generate_images = async () => {
         if (dirs[index] == null) {
 
             console.log("generate");
-            await combineImages({ imageDatas: combineDatas, resPath: `${resImgPath}/res_${totalCount}.png` });
+            combineImages({ imageDatas: combineDatas, resPath: `${resImgPath}/res_${totalCount}.png` });
             totalCount++;
             return;
         }
