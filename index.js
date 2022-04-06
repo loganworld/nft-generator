@@ -4,6 +4,7 @@ const fs = require('fs');
 
 const initDatas = {
     dirs: ["datas/foot", "datas/body", "datas/head", "datas/back", "datas/wing", "datas/horn", "datas/eye"],
+    // dirs: ["emoji/body", "emoji/eye1", "emoji/eye2"],
     resImgPath: "export-images",
     resDataPath: "exports/hashes.json",
     combineDatas: [],
