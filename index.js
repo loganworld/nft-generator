@@ -16,14 +16,14 @@ const generate_images = async () => {
         if (dirs[index] == null) {
 
             console.log("generate");
-            combineImages({ imageDatas: combineDatas, resPath: `${resImgPath}/res_${totalCount}.png` });
+            await combineImages({ imageDatas: combineDatas, resPath: `${resImgPath}/res_${totalCount}.png` });
             totalCount++;
             return;
         }
 
         const length = fs.readdirSync(dirs[index]).length;
         for (var i = 1; i <= length; i++) {
-            generate({ dirs, combineDatas: combineDatas.concat([`${dirs[index]}/c (${i}).png`]), index: index + 1, resImgPath })
+            await generate({ dirs, combineDatas: combineDatas.concat([`${dirs[index]}/c (${i}).png`]), index: index + 1, resImgPath })
         }
     }
     await generate(initDatas);
