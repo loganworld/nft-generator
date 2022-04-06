@@ -9,7 +9,7 @@ const combineImages = async ({ imageDatas, resPath }) => {
         Canvas: Canvas,
         Image: Image
     });
-    bs64 = await resizeImg(bs64, 800, 800);
+    // bs64 = await resizeImg(bs64, 800, 800);
     console.log("generated");
     bs64 = bs64.replace(/^data:image\/png;base64,/, "");
     fs.writeFileSync(resPath, bs64, 'base64', (err) => {
