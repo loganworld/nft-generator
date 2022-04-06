@@ -3,10 +3,10 @@ const { upload_IPFS } = require("./modules/ipfs")
 const fs = require('fs');
 
 const initDatas = {
-    dirs: ["datas/foot", "datas/body", "datas/head", "datas/back", "datas/wing", "datas/horn", "datas/eye"],
+    dirs: ["datas/foot", "datas/body", "datas/back", "datas/wing", "datas/horn", "datas/eye"],
     resImgPath: "export-images",
     resDataPath: "exports/hashes.json",
-    combineDatas: [],
+    combineDatas: ["datas/head/c (1).png"],
     index: 0
 }
 
