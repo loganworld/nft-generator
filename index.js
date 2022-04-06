@@ -23,7 +23,7 @@ const generate_images = async () => {
 
         const length = fs.readdirSync(dirs[index]).length;
         for (var i = 1; i <= length; i++) {
-            await generate({ dirs, combineDatas: combineDatas.concat([`${dirs[index]}/c (${i}).png`]), index: index + 1, resImgPath })
+            generate({ dirs, combineDatas: combineDatas.concat([`${dirs[index]}/c (${i}).png`]), index: index + 1, resImgPath })
         }
     }
     await generate(initDatas);
